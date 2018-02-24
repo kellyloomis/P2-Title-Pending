@@ -1,0 +1,19 @@
+body {
+    background-color: darkturquoise;
+}
+
+.navbar {
+    margin-top: 0px;
+    padding: 5px;
+    background-color: 	#9370DB;
+}
+
+.jumbotron {
+    margin: 10px;
+    background-color: #EE82EE;
+}
+
+.card {
+    margin-bottom: 0px;
+    background-color: 	#00FFFF;
+}
