@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/kellyloomis/P2-Title-Pending#readme",
   "dependencies": {
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "mysql2": "^1.5.2",
+    "sequelize": "^4.34.1"
   }
 }
