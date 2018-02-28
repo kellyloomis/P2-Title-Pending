@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/kellyloomis/P2-Title-Pending#readme",
   "dependencies": {
+    "dotenv": "^5.0.1",
     "express": "^4.16.2",
     "mysql2": "^1.5.2",
     "sequelize": "^4.34.1"
