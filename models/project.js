@@ -24,5 +24,5 @@ var Project = sequelize.define("project", {
 // Syncs with DB
 Project.sync();
 
-// Makes the Chirp Model available for other files (will also create a table)
+// Makes the Project Model available for other files (will also create a table)
 module.exports = Project;
