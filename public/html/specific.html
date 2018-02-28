@@ -7,11 +7,8 @@
     <title>Project Details</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
-    <script
-  src="https://code.jquery.com/jquery-3.3.1.js"
-  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-  crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="body-container">
@@ -61,7 +58,38 @@
     <input type="submit" value="Submit" id="add-btn">
     </form>
 
-    <table class="table">
+    <br></br>
+ 
+    <div class="container-fluid" id="projectTasks">
+
+        <div class="row">
+            <div class="col-sm-4">Author</div>
+            <div class="col-sm-4">Task</div>
+            <div class="col-sm-4">Due Date</div>
+         </div>
+
+        <div class="row" id="newRow">
+            <div class="content-column col-md-4" id="author"></div>
+            <div class="content-column col-md-4" id="task"></div>
+            <div class="content-column col-md-4" id="dueDate"></div>
+        </div>
+
+    </div>
+<!-- 
+<div class="table">
+            <div class="column">
+                <th>Author</div>
+                <th>Task</div>
+                <th>Due Date</div>
+            </div>
+            <div class="row">
+              <div class="col-sm-3"></div>
+              <div class="col-sm-3"></div>
+              <div class="col-sm-3"></div>
+            </div>
+    </div> -->
+
+ <!--    <table class="table">
         <thead>
             <tr>
                 <th scope="col">Author</th>
@@ -77,7 +105,7 @@
         
             </tr>
         </tbody>
-    </table>
+    </table> -->
     <div id="footer" class="card text-center">
         <div class="card-body">
             <p class="card-text">Find more Support.</p>
