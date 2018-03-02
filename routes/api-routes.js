@@ -5,41 +5,48 @@
 // Dependencies
 // =============================================================
 var Projects = require("../models/project.js");
+var express = require("express");
+var app = express();
 
 
 // Routes
 // =============================================================
 module.exports = function(app) {
 
-  // // Get all chirps
-  // app.get("/api/all", function(req, res) {
+  // Get all tasks
+  app.get("/api/all", function(req, res) {
+    
+    // Finding all tasks, and then returning them to the user as JSON.
+    // Sequelize queries are aynchronous, which helps with percieved speed.
+    // If we want something to be guaranteed to happen after the query, we'll use
+    // the .then function
+    Projects.findAll({}).then(function(results) {
+      // results are available to us inside the .then
+      console.log("did this work?");
+      console.log(results);
+     
+      res.json(results);
+    });
 
-  //   // Finding all Chirps, and then returning them to the user as JSON.
-  //   // Sequelize queries are aynchronous, which helps with percieved speed.
-  //   // If we want something to be guaranteed to happen after the query, we'll use
-  //   // the .then function
-  //   Project.findAll({}).then(function(results) {
-  //     // results are available to us inside the .then
-  //     res.json(results);
-  //   });
+  });
 
-  // });
+  // Add a task
+  app.post("/api/projects", function(req, res) {
 
-  // // Add a chirp
-  // app.post("/api/new", function(req, res) {
+    console.log("Hey we added a task:");
+  
+    console.log(req.body);
+    
 
-  //   console.log("Project Data:");
-  //   console.log(req.body);
+    Projects.create({
+      author: req.body.author,
+      task: req.body.task,
+      dueDate: req.body.dueDate
+    }).then(function(results) {
+      console.log(results);
+      res.end();
+    });
 
-  //   Chirp.create({
-  //     author: req.body.author,
-  //     body: req.body.body,
-  //     created_at: req.body.created_at
-  //   }).then(function(results) {
-  //     // `results` here would be the newly created chirp
-  //     res.end();
-  //   });
-
-  // });
+  });
 
 };
