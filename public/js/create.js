@@ -14,54 +14,18 @@ $("#add-btn").on("click", function(event) {
     // due date of task
     dueDate: $("#inputDueDate").val().trim()
   };
-  
 
-      $("#author").append(newTask.author);
-      $("#task").append(newTask.task);
-      $("#dueDate").append(newTask.dueDate);
+//function for adding the new task to the document body
+  var appendNewTask = function () {
 
-      $("div").append($("<div>newTask</div>"));
+      $("#author").append("<tr>",newTask.author);
+      $("#task").append("<tr>",newTask.task);
+      $("#dueDate").append("<tr>",newTask.dueDate);
 
+  };
 
-      // for (var i = 0; i < newTask.length; i++) {
+  appendNewTask();
 
-      //   var divRow = $("<div>");
-
-        
-
-      //   $("#projectTasks").append(newTask.author);
-      //   $("#projectTasks").append(newTask.task);
-      //   $("#projectTasks").append(newTask.dueDate);
-
-      // }
-
-
-  // // var paragraph = $("<p>");
-  // var divRow = $("<div>");
-  // var div = $(".container-fluid");
-  // $(divRow).append(newTask.author);
-  // $(divRow).append(newTask.task);
-  // $(divRow).append(newTask.dueDate);
-  // $(div).append(div);
-
-
-// function addNewRow() {
-//   var newElem = document.createElement ("div");
-
-
-//   var author = document.getElementById ("author");
-//   container.appendChild (newElem);
-//   var task = document.getElementById ("task");
-//   container.appendChild (newElem);
-//   var dueDate = document.getElementById ("dueDate");
-//   container.appendChild (newElem);
-//     // document.getElementById("author").appendChild(newTask.author);
-//     // document.getElementById("task").appendChild(newTask.task);
-//     // document.getElementById("dueDate").appendChild(newTask.dueDate);
-
-// }
-
-// addNewRow();
 
   // send an AJAX POST-request with jQuery
   $.post("/api/new", newTask)
