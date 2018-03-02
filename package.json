@@ -21,6 +21,8 @@
     "dotenv": "^5.0.1",
     "express": "^4.16.2",
     "mysql2": "^1.5.2",
+    "npm": "^5.7.1",
+    "require-path": "^0.3.0",
     "sequelize": "^4.34.1"
   }
 }
