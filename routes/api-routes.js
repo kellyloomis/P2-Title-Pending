@@ -4,7 +4,7 @@
 
 // Dependencies
 // =============================================================
-var Projects = require("../models/project.js");
+var db = require("../models");
 var express = require("express");
 var app = express();
 
@@ -14,13 +14,13 @@ var app = express();
 module.exports = function(app) {
 
   // Get all tasks
-  app.get("/api/all", function(req, res) {
+  app.get("/api/projects", function(req, res) {
     
     // Finding all tasks, and then returning them to the user as JSON.
     // Sequelize queries are aynchronous, which helps with percieved speed.
     // If we want something to be guaranteed to happen after the query, we'll use
     // the .then function
-    Projects.findAll({}).then(function(results) {
+    db.projects.findAll({}).then(function(results) {
       // results are available to us inside the .then
       console.log("did this work?");
       console.log(results);
@@ -38,7 +38,7 @@ module.exports = function(app) {
     console.log(req.body);
     
 
-    Projects.create({
+    db.projects.create({
       author: req.body.author,
       task: req.body.task,
       dueDate: req.body.dueDate

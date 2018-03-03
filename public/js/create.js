@@ -1,6 +1,12 @@
 // Code here handles what happens when a user submits a new character on the form.
 // Effectively it takes the form inputs then sends it to the server to save in the DB.
+var appendNewTask = function (author, task, dueDate) {
 
+  $("#author").append("<tr>", author);
+  $("#task").append("<tr>", task);
+  $("#dueDate").append("<tr>", dueDate);
+
+};
 // when user clicks add-btn
 $("#add-btn").on("click", function(event) {
   event.preventDefault();
@@ -16,21 +22,17 @@ $("#add-btn").on("click", function(event) {
   };
 
 //function for adding the new task to the document body
-  var appendNewTask = function () {
+  
 
-      $("#author").append("<tr>",newTask.author);
-      $("#task").append("<tr>",newTask.task);
-      $("#dueDate").append("<tr>",newTask.dueDate);
-
-  };
-
-  appendNewTask();
+  
 
 
   // send an AJAX POST-request with jQuery
-  $.post("/api/new", newTask)
+  $.post("/api/projects", newTask)
     // on success, run this callback
     .then(function(data) {
+
+      appendNewTask(newTask.author, newTask.task, newTask.dueDate);
       // log the data we found
       console.log(data);
     
@@ -43,3 +45,16 @@ $("#add-btn").on("click", function(event) {
   $("#inputTask").val("");
   $("#inputDueDate").val("");
 });
+
+function getTasks() {
+  $.get("/api/projects", function (data) {
+      projects = data;
+
+      for(var i = 0; i < projects.length; i++) {
+        appendNewTask(projects[i].author, projects[i].task, projects[i].dueDate );
+        console.log(projects);
+      }
+  });
+}
+
+getTasks();
