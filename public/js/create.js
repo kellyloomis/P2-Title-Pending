@@ -1,10 +1,12 @@
 // Code here handles what happens when a user submits a new character on the form.
 // Effectively it takes the form inputs then sends it to the server to save in the DB.
+
 var appendNewTask = function (author, task, dueDate) {
 
   $("#author").append("<tr>", author);
   $("#task").append("<tr>", task);
   $("#dueDate").append("<tr>", dueDate);
+  $("#status").append("<tr>", status);
 
 };
 // when user clicks add-btn
