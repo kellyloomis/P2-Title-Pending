@@ -38,3 +38,5 @@ db.sequelize.sync().then(function () {
     console.log("listening on port", PORT);
   });
 });
+
+
