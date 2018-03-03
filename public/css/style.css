@@ -3,9 +3,9 @@
 }
 
 body {
-    background-color:	#FF00FF;
-    background-image: url(https://img.cinemablend.com/filter:scale/cb/8/0/d/e/1/5/80de159446f5bf396b6a5f977699e32fbf38a56d4ad911f4ec288db8dbf897e4.jpg?mw=600)
+    background-color: #80ff80;
 }
+
 .jumbotron {
     width: 90%;
     font-size: 175%;
@@ -19,12 +19,13 @@ body {
     background-size: cover;
 }
 
-.table {
+#table {
     width: 90%;
     text-align: center;
     margin-top: 50px;
     margin-bottom: 50px;
     margin: auto;
+    background-color: lightblue
 }
 
 .card {
