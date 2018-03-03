@@ -1,15 +1,24 @@
 // Code here handles what happens when a user submits a new character on the form.
 // Effectively it takes the form inputs then sends it to the server to save in the DB.
-var appendNewTask = function (author, task, dueDate) {
 
-  $("#author").append("<tr>", author);
-  $("#task").append("<tr>", task);
-  $("#dueDate").append("<tr>", dueDate);
+var completed = false;
+var appendNewTask = function (author, task, dueDate, id) {
 
+  //we are adding text and appending our id to the new <tr>
+  $("<tr>").text(author).appendTo("#author");
+  $("<tr>").text(task).appendTo("#task");
+  $("<tr>").text(dueDate).appendTo("#dueDate");
+
+
+  var button = $("<button>").attr("data-id", id).text("complete")
+  $("<tr>").append(button).appendTo("#completeButton");
 };
+
 // when user clicks add-btn
 $("#add-btn").on("click", function(event) {
   event.preventDefault();
+
+
  
   // make a newTask obj
   var newTask = {
@@ -18,10 +27,16 @@ $("#add-btn").on("click", function(event) {
     // role from role input
     task: $("#inputTask").val().trim(),
     // due date of task
-    dueDate: $("#inputDueDate").val().trim()
+    dueDate: $("#inputDueDate").val().trim(),
   };
 
-//function for adding the new task to the document body
+
+  $("completeButton").on("click", function () {
+    for(var j = 0; j < projects.length; j++) {
+      $(projects[j]).remove();
+    }
+    
+  });
   
 
   
@@ -32,7 +47,7 @@ $("#add-btn").on("click", function(event) {
     // on success, run this callback
     .then(function(data) {
 
-      appendNewTask(newTask.author, newTask.task, newTask.dueDate);
+      appendNewTask(data.author, data.task, data.dueDate, data.id);
       // log the data we found
       console.log(data);
     
@@ -51,7 +66,7 @@ function getTasks() {
       projects = data;
 
       for(var i = 0; i < projects.length; i++) {
-        appendNewTask(projects[i].author, projects[i].task, projects[i].dueDate );
+        appendNewTask(projects[i].author, projects[i].task, projects[i].dueDate, projects[i].id );
         console.log(projects);
       }
   });
