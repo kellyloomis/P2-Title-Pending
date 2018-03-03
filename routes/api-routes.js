@@ -44,7 +44,7 @@ module.exports = function(app) {
       dueDate: req.body.dueDate
     }).then(function(results) {
       console.log(results);
-      res.end();
+      res.json(results);
     });
 
   });
