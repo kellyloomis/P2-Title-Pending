@@ -31,17 +31,6 @@ $("#add-btn").on("click", function(event) {
   };
 
 
-  $("completeButton").on("click", function () {
-    for(var j = 0; j < projects.length; j++) {
-      $(projects[j]).remove();
-    }
-    
-  });
-  
-
-  
-
-
   // send an AJAX POST-request with jQuery
   $.post("/api/projects", newTask)
     // on success, run this callback
@@ -50,7 +39,7 @@ $("#add-btn").on("click", function(event) {
       appendNewTask(data.author, data.task, data.dueDate, data.id);
       // log the data we found
       console.log(data);
-    
+
       // tell the user we're adding a character with an alert window
       alert("Adding task...");
     });
@@ -59,6 +48,28 @@ $("#add-btn").on("click", function(event) {
   $("#inputAuthor").val("");
   $("#inputTask").val("");
   $("#inputDueDate").val("");
+});
+
+
+$("#completeButton").on("click", "button", function (event) {
+  var number = $(this).attr('data-id');
+
+//created variables for each column
+  var dueDateColumn = $('#dueDate tr:nth-of-type(' + number + ')');
+  var taskColumn = $('#task tr:nth-of-type(' + number + ')');
+  var authorColumn = $('#author tr:nth-of-type(' + number + ')');
+  var completeButtonColumn = $('#completeButton tr:nth-of-type(' + number + ')');
+
+  //make column green when the complete button is clicked
+  $(dueDateColumn).css("background-color", "#7FFF00");
+  $(taskColumn).css("background-color", "#7FFF00");
+  $(authorColumn).css("background-color", "#7FFF00");
+  $(completeButtonColumn).text("Completed!");
+
+  // $('#dueDate tr:nth-of-type(' + number + ')').remove()
+  // $('#task tr:nth-of-type(' + number + ')').remove()
+  // $('#author tr:nth-of-type(' + number + ')').remove()
+
 });
 
 function getTasks() {
