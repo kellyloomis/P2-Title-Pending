@@ -1,7 +1,5 @@
 // Code here handles what happens when a user submits a new character on the form.
 // Effectively it takes the form inputs then sends it to the server to save in the DB.
-
-var completed = false;
 var appendNewTask = function (author, task, dueDate, id) {
 
   //we are adding text and appending our id to the new <tr>
@@ -9,17 +7,18 @@ var appendNewTask = function (author, task, dueDate, id) {
   $("<tr>").text(task).appendTo("#task");
   $("<tr>").text(dueDate).appendTo("#dueDate");
 
-
-  var button = $("<button>").attr("data-id", id).text("complete")
+  //target and style of button
+  var button = $("<button>").attr("data-id", id).text("Submit");
+  button.css("width", "130px");
   $("<tr>").append(button).appendTo("#completeButton");
 };
 
 // when user clicks add-btn
-$("#add-btn").on("click", function(event) {
+$("#add-btn").on("click", function (event) {
   event.preventDefault();
 
 
- 
+
   // make a newTask obj
   var newTask = {
     // name from name input
@@ -34,7 +33,7 @@ $("#add-btn").on("click", function(event) {
   // send an AJAX POST-request with jQuery
   $.post("/api/projects", newTask)
     // on success, run this callback
-    .then(function(data) {
+    .then(function (data) {
 
       appendNewTask(data.author, data.task, data.dueDate, data.id);
       // log the data we found
@@ -54,7 +53,7 @@ $("#add-btn").on("click", function(event) {
 $("#completeButton").on("click", "button", function (event) {
   var number = $(this).attr('data-id');
 
-//created variables for each column
+  //created variables for each column
   var dueDateColumn = $('#dueDate tr:nth-of-type(' + number + ')');
   var taskColumn = $('#task tr:nth-of-type(' + number + ')');
   var authorColumn = $('#author tr:nth-of-type(' + number + ')');
@@ -64,8 +63,22 @@ $("#completeButton").on("click", "button", function (event) {
   $(dueDateColumn).css("background-color", "#7FFF00");
   $(taskColumn).css("background-color", "#7FFF00");
   $(authorColumn).css("background-color", "#7FFF00");
-  $(completeButtonColumn).text("Completed!");
 
+  //function that confirms user wants to submit task
+  var confirmCompletion = function () {
+    confirm("Are you sure you want to submit this task?");
+
+    if (confirm) {
+      $(completeButtonColumn).css("text-align", "center");
+      $(completeButtonColumn).text("Completed!");
+      alert("Your task is now complete. Continue to your next task!");
+    }
+
+  };
+
+  confirmCompletion();
+
+  //allows for removal of columns in table if complete button is clicked
   // $('#dueDate tr:nth-of-type(' + number + ')').remove()
   // $('#task tr:nth-of-type(' + number + ')').remove()
   // $('#author tr:nth-of-type(' + number + ')').remove()
@@ -74,12 +87,12 @@ $("#completeButton").on("click", "button", function (event) {
 
 function getTasks() {
   $.get("/api/projects", function (data) {
-      projects = data;
+    projects = data;
 
-      for(var i = 0; i < projects.length; i++) {
-        appendNewTask(projects[i].author, projects[i].task, projects[i].dueDate, projects[i].id );
-        console.log(projects);
-      }
+    for (var i = 0; i < projects.length; i++) {
+      appendNewTask(projects[i].author, projects[i].task, projects[i].dueDate, projects[i].id);
+      console.log(projects);
+    }
   });
 }
 
