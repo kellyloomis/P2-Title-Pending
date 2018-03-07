@@ -17,8 +17,6 @@ var appendNewTask = function (author, task, dueDate, id) {
 $("#add-btn").on("click", function (event) {
   event.preventDefault();
 
-
-
   // make a newTask obj
   var newTask = {
     // name from name input
