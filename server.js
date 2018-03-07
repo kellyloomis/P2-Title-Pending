@@ -33,10 +33,14 @@ require("./routes/html-route.js")(app);
 
 // Starts the server to begin listening
 // =============================================================
-db.sequelize.sync().then(function () {
-  app.listen(PORT, function () {
-    console.log("listening on port", PORT);
+if (process.env.UPDATE_MODELS){
+  db.sequelize.sync({force: true}).then(function() {
+    process.exit(0);
   });
-});
-
-
+} else {
+  db.sequelize.sync().then(function () {
+    app.listen(PORT, function () {
+      console.log("listening on port", PORT);
+    });
+  });
+}
