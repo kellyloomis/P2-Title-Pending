@@ -1,19 +1,19 @@
 
-<style type="text/css">
-        .table {
-            display: table;
-        }
 
-        .row {
-            display: table-row;
-        }
+.table {
+    display: table;
+}
 
-        .column {
-            display: table-cell;
-            vertical-align: top;
-        }
-    </style>
-=======
+.row {
+    display: table-row;
+}
+
+.column {
+    display: table-cell;
+    vertical-align: top;
+}
+
+
 .display-4 {
     font-style: Lucida;
 }
