@@ -1,3 +1,19 @@
+
+<style type="text/css">
+        .table {
+            display: table;
+        }
+
+        .row {
+            display: table-row;
+        }
+
+        .column {
+            display: table-cell;
+            vertical-align: top;
+        }
+    </style>
+=======
 .display-4 {
     font-style: Lucida;
 }
@@ -58,3 +74,4 @@ body {
     margin-left: 20px;
     margin-right: 20px;
 }
+
