@@ -1,21 +1,21 @@
 {
   "development": {
     "username": "root",
-    "password": "Silverado2002",
+    "password": "root",
     "database": "projects",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "Silverado2002",
+    "password": "root",
     "database": "projects",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
     "username": "root",
-    "password": "Silverado2002",
+    "password": "root",
     "database": "projects",
     "host": "127.0.0.1",
     "dialect": "mysql"
