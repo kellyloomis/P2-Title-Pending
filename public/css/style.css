@@ -1,4 +1,10 @@
+.container-fluid {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
 
+/*
 <style type="text/css">
         .table {
             display: table;
@@ -75,3 +81,4 @@ body {
     margin-right: 20px;
 }
 
+*/
