@@ -4,22 +4,20 @@
     width: 100%;
 }
 
-/*
-<style type="text/css">
-        .table {
-            display: table;
-        }
+.table {
+    display: table;
+}
 
-        .row {
-            display: table-row;
-        }
+.row {
+    display: table-row;
+}
 
-        .column {
-            display: table-cell;
-            vertical-align: top;
-        }
-    </style>
-=======
+.column {
+    display: table-cell;
+    vertical-align: top;
+}
+
+
 .display-4 {
     font-style: Lucida;
 }
