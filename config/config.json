@@ -1,6 +1,7 @@
 {
   "development": {
     "username": "root",
+
     "password": "root",
     "database": "projects",
     "host": "127.0.0.1",
@@ -8,6 +9,7 @@
   },
   "test": {
     "username": "root",
+
     "password": "root",
     "database": "projects",
     "host": "127.0.0.1",
@@ -15,7 +17,7 @@
   },
   "production": {
     "username": "root",
-    "password": "root",
+    "password": "Wyattdixie5",
     "database": "projects",
     "host": "127.0.0.1",
     "dialect": "mysql"
