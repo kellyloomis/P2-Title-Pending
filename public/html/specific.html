@@ -1,4 +1,110 @@
 <!DOCTYPE html>
+<html>
+<title>Task It!</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
+.myLink {display: none}
+table {
+    display: table;
+    width: 100%;
+}
+tr {
+    display: table-row;
+}
+th {
+    display: table-cell;
+}
+table th {
+    width: 25%;
+}
+</style>
+<body class="w3-light-grey">
+
+<!-- Navigation Bar -->
+<!-- <div class="w3-bar w3-white w3-border-bottom w3-xlarge">
+  <a href="#" class="w3-bar-item w3-button w3-text-red w3-hover-red"><b><i class="fa fa-map-marker w3-margin-right"></i>Logo</b></a>
+  <a href="#" class="w3-bar-item w3-button w3-right w3-hover-red w3-text-grey"><i class="fa fa-search"></i></a>
+</div> -->
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-hide-small" style="max-width:1500px">
+  <img class="w3-image" src="../images/lego-bg.jpg" alt="Legos" width="1500" height="700">
+  <div class="w3-display-middle" style="width:65%">   
+
+    <!-- Tabs -->
+    <div id="table" class="w3-container w3-white w3-padding-16">
+      <h3>Start Tasking Your Project!</h3>
+      <div class="w3-row-padding" style="margin:0 -16px;">
+        <div class="w3-full">
+          <label>Author</label>
+          <input class="w3-input w3-border" type="text" placeholder="Created By" id="inputAuthor">
+        </div>
+        <div class="w3-full">
+          <label>Task</label>
+          <input class="w3-input w3-border" type="text" placeholder="Enter Task" id="inputTask">
+        </div>
+        <div class="w3-full">
+          <label>Due Date</label>
+          <input class="w3-input w3-border" type="text" placeholder="Enter Due Date" id="inputDueDate">
+        </div>
+      </div>
+      <p><button class="w3-button w3-dark-grey" id="add-btn">Add Task</button></p>
+    </div>
+
+    <br></br>
+
+    <table class="w3-container w3-white w3-padding-16" id="projectTasks">
+
+        <tr>
+            <th>Author</th>
+            <th>Task</th>
+            <th>Due Date</th>
+            <th>Completion Status</th>
+         </tr>
+
+        <tr id="newRow">
+            <tr id="author"></tr>
+            <tr id="task"></tr>
+            <tr id="dueDate"></tr>
+            <tr id="completeButton"></tr>
+        </tr>
+
+    </table>
+
+ </div>
+</header>
+
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:1100px;">
+
+
+
+  
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-center w3-opacity w3-margin-bottom">
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+
+<script src="../js/create.js" type="text/javascript"></script>
+</body>
+</html>
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -96,9 +202,9 @@
     </div>
     </div>
     <!-- <script src="js/index.js" type="text/javascript"></script> -->
-    <script src="../js/create.js" type="text/javascript"></script>
+<!--     <script src="../js/create.js" type="text/javascript"></script> -->
     <!-- <script src="js/review.js" type="text/javascript"></script>
     <script src="js/projects.js" type="text/javascript"></script>
     <script src="js/specific.js" type="text/javascript"></script> -->
-</body>
-</html>
+<!-- </body>
+</html> --> -->
