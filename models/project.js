@@ -3,7 +3,7 @@ module.exports = function (sequelize, DataTypes) {
     author: DataTypes.STRING,
     task: DataTypes.STRING,
     dueDate: DataTypes.DATE
-    
+        
   });
   return Projects;
 };
