@@ -1,5 +1,10 @@
 // Code here handles what happens when a user submits a new character on the form.
 // Effectively it takes the form inputs then sends it to the server to save in the DB.
+var moment = require("moment");
+
+var formatDate= 20010303070000000;
+
+var responseDate = moment(formatDate).format('DD/MM/YYYY');
 var appendNewTask = function (author, task, dueDate, id) {
 
   //we are adding text and appending our id to the new <tr>
@@ -24,7 +29,7 @@ $("#add-btn").on("click", function (event) {
     // role from role input
     task: $("#inputTask").val().trim(),
     // due date of task
-    dueDate: $("#inputDueDate").val().trim(),
+    dueDate: $("#inputDueDate").toString(d + "." + m + "." + y).trim()
   };
 
 

@@ -20,8 +20,17 @@ tr {
 th {
     display: table-cell;
 }
-table th {
-    width: 25%;
+#author {
+    width: 10%;
+    text-align: center;
+}
+#task {
+    width: 80%;
+    text-align: center;
+}
+#dueDate {
+    width: 10%;
+    text-align: center;
 }
 </style>
 <body class="w3-light-grey">
@@ -61,18 +70,18 @@ table th {
 
     <table class="w3-container w3-white w3-padding-16" id="projectTasks">
 
-        <tr>
-            <th>Author</th>
-            <th>Task</th>
-            <th>Due Date</th>
-            <th>Completion Status</th>
+        <tr class="row">
+            <th class="col-md-3">Author</th>
+            <th class="col-md-3">Task</th>
+            <th class="col-md-3">Due Date</th>
+            <th class="col-md-3">Completion Status</th>
          </tr>
 
-        <tr id="newRow">
-            <tr id="author"></tr>
-            <tr id="task"></tr>
-            <tr id="dueDate"></tr>
-            <tr id="completeButton"></tr>
+        <tr class="row" id="newRow">
+            <td id="author"></td>
+            <td id="task"></td>
+            <td id="dueDate"></td>
+            <td id="completeButton"></td>
         </tr>
 
     </table>
